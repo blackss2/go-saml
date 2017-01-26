@@ -206,6 +206,7 @@ type Assertion struct {
 	Subject            Subject
 	Conditions         Conditions
 	AttributeStatement AttributeStatement
+	AuthnStatement AuthnStatement
 }
 
 type Conditions struct {

@@ -206,7 +206,7 @@ type Assertion struct {
 	Subject            Subject
 	Conditions         Conditions
 	AttributeStatement AttributeStatement
-	AuthnStatement AuthnStatement
+	AuthnStatement     AuthnStatement
 }
 
 type Conditions struct {
@@ -269,18 +269,13 @@ type AttributeStatement struct {
 }
 
 type AuthnStatement struct {
-	XMLName             xml.Name
-	AuthnInstant string           `xml:",attr"`
-	SessionIndex string           `xml:",attr"`
+	XMLName      xml.Name
+	AuthnInstant string `xml:",attr"`
+	SessionIndex string `xml:",attr"`
 	AuthnContext AuthnContext
 }
 
 type AuthnContext struct {
-	XMLName                 xml.Name
+	XMLName              xml.Name
 	AuthnContextClassRef AuthnContextClassRef
-}
-
-type AuthnContextClassRef struct {
-	XMLName                 xml.Name
-	Value   string `xml:",innerxml"`
 }

@@ -266,3 +266,20 @@ type AttributeStatement struct {
 	XMLName    xml.Name
 	Attributes []Attribute `xml:"Attribute"`
 }
+
+type AuthnStatement struct {
+	XMLName             xml.Name
+	AuthnInstant string           `xml:",attr"`
+	SessionIndex string           `xml:",attr"`
+	AuthnContext AuthnContext
+}
+
+type AuthnContext struct {
+	XMLName                 xml.Name
+	AuthnContextClassRef AuthnContextClassRef
+}
+
+type AuthnContextClassRef struct {
+	XMLName                 xml.Name
+	Value   string `xml:",innerxml"`
+}
